@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: Actions
+    @IBAction func touchDigit(sender: UIButton) {
+        let digit = sender.currentTitle
+        print(digit)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

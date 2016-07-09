@@ -254,6 +254,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAC" destination="ir4-XJ-aBq" id="T3L-QO-9qb"/>
                         <outlet property="display" destination="2IZ-dk-LAs" id="B7L-7o-kuN"/>
                     </connections>
                 </viewController>

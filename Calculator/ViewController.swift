@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet private weak var display: UILabel!
+    @IBOutlet weak var btnAC: UIButton!
     
     private var userIsInTheMiddleOfTyping = false
     private var brain = CalculatorBrain()
@@ -37,20 +38,36 @@ class ViewController: UIViewController {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
-            display.text = textCurrentlyInDisplay + digit
+            if (textCurrentlyInDisplay == "0" && digit != "."){
+                display.text = digit
+            }
+            else{
+                display.text = textCurrentlyInDisplay + digit
+            }
         }
         else {
             if (digit == "."){
                 display.text = "0."
             }
+            else if (digit == "0"){
+                display.text = "0"
+            }
             else {
                 display.text = digit
             }
         }
+        btnAC.setTitle("C", forState: .Normal)
         userIsInTheMiddleOfTyping = true
     }
     
     @IBAction private func performOperation(sender: UIButton) {
+        if (sender == btnAC && btnAC.currentTitle == "C"){
+            btnAC.setTitle("AC", forState: .Normal)
+        }
+        else if (sender != btnAC){
+            btnAC.setTitle("C", forState: .Normal)
+        }
+        
         if (userIsInTheMiddleOfTyping) {
             brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false

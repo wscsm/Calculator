@@ -16,7 +16,7 @@ class CalculatorBrain {
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
-        case Ac
+        case Clear
         case Equals
     }
     
@@ -30,7 +30,8 @@ class CalculatorBrain {
         "×": Operation.BinaryOperation{ $0 * $1 },
         "÷": Operation.BinaryOperation{ $0 / $1 },
         "=": Operation.Equals,
-        "AC": Operation.Ac,
+        "AC": Operation.Clear,
+        "C": Operation.Clear
     ]
     
     func setOperand(operand: Double)  {
@@ -55,7 +56,7 @@ class CalculatorBrain {
                 pending = PendingBinaryOperationInfo(binaryFunction: fun, firstOperand: accumulator)
             case .Equals:
                 executePendingBinaryOperation()
-            case .Ac:
+            case .Clear:
                 pending = nil
                 accumulator = 0.0
             }

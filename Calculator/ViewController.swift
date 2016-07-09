@@ -18,12 +18,20 @@ class ViewController: UIViewController {
 
     private var displayValue: Double {
         get {
-            return Double(display.text!)!
+            let displayText = display.text!
+            //if (displayText[displayText.endIndex.predecessor()] == ".") {
+            if (displayText.characters.last! == ".") {
+                return Double(displayText+"0")!
+            }
+            else{
+                return Double(displayText)!
+            }
         }
         set {
             display.text = String(newValue)
         }
     }
+    
     // MARK: Actions
     @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -32,7 +40,12 @@ class ViewController: UIViewController {
             display.text = textCurrentlyInDisplay + digit
         }
         else {
-            display.text = digit
+            if (digit == "."){
+                display.text = "0."
+            }
+            else {
+                display.text = digit
+            }
         }
         userIsInTheMiddleOfTyping = true
     }

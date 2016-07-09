@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle
-        print(digit)
+        print("digit = \(digit)")
     }
     
     override func viewDidLoad() {

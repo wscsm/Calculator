@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet private weak var display: UILabel!
-    @IBOutlet weak var btnAC: UIButton!
+    @IBOutlet private weak var btnAC: UIButton!
+    @IBOutlet private weak var inputSequence: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
     private var brain = CalculatorBrain()
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction private func touchDigit(sender: UIButton) {
+        AudioServicesPlaySystemSound(1104)
         let digit = sender.currentTitle!
         // 重复输入点号,不处理直接返回;
         if (digit == "." && display.text!.containsString(".")){
@@ -68,6 +71,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func performOperation(sender: UIButton) {
+        AudioServicesPlaySystemSound(1104)
         if (sender == btnAC && btnAC.currentTitle == "C"){
             btnAC.setTitle("AC", forState: .Normal)
         }

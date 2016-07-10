@@ -13,6 +13,7 @@
 		330D49741D30010F0065622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330D49731D30010F0065622B /* Assets.xcassets */; };
 		330D49771D30010F0065622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D49751D30010F0065622B /* LaunchScreen.storyboard */; };
 		330DCCFF1D30C24800A85A7D /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DCCFE1D30C24800A85A7D /* CalculatorBrain.swift */; };
+		3340B0151D32AD6E005B7DA5 /* UIPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340B0141D32AD6E005B7DA5 /* UIPaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		330D49761D30010F0065622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		330D49781D30010F0065622B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		330DCCFE1D30C24800A85A7D /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		3340B0141D32AD6E005B7DA5 /* UIPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				330DCCFE1D30C24800A85A7D /* CalculatorBrain.swift */,
 				330D496E1D30010F0065622B /* ViewController.swift */,
 				330D49701D30010F0065622B /* Main.storyboard */,
+				3340B0141D32AD6E005B7DA5 /* UIPaddingLabel.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3340B0151D32AD6E005B7DA5 /* UIPaddingLabel.swift in Sources */,
 				330DCCFF1D30C24800A85A7D /* CalculatorBrain.swift in Sources */,
 				330D496F1D30010F0065622B /* ViewController.swift in Sources */,
 				330D496D1D30010F0065622B /* AppDelegate.swift in Sources */,

@@ -36,8 +36,15 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
+        // 重复输入点号,不处理直接返回;
+        if (digit == "." && display.text!.containsString(".")){
+            return
+        }
+        
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
+            // 检查是否重复输入了".", 忽略之;
+            
             if (textCurrentlyInDisplay == "0" && digit != "."){
                 display.text = digit
             }

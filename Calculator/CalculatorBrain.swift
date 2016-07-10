@@ -34,11 +34,17 @@ class CalculatorBrain {
         "C": Operation.Clear
     ]
     
+    private var variableValue: Dictionary<String, Double> = ["M":0.0]
+    
     func setOperand(operand: Double)  {
         accumulator = operand
     }
     
-    func executePendingBinaryOperation() {
+    func setOperand(variableName: String) {
+        
+    }
+    
+    private func executePendingBinaryOperation() {
         if (pending != nil) {
             accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
             pending = nil
